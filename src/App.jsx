@@ -27,6 +27,10 @@ function Hangman() {
         } else {
             const newMisses = misses + 1;
             setMisses(newMisses);
+            if (newMisses === 10) {
+                setGameOver(true);
+                alert("You lose. The word was:"`${randomWordToGuess}`);
+            }
         }
     }
 
