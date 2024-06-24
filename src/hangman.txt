@@ -1,0 +1,25 @@
+/**
+ *
+ * @param {string[]} guessedLetters
+ * @param {string} wordToGuess
+ * @returns {string[]}
+ */
+
+
+
+function hangman(guessedLetters, wordToGuess) {
+  const showUser = [];
+  wordToGuess = wordToGuess.toLowerCase();
+
+  for (let i = 0; i < wordToGuess.length; i++) {
+    const char = wordToGuess[i];
+
+    if (guessedLetters.includes(char)) {
+      showUser.push(char);
+    } else {
+      showUser.push("_");
+    }
+  }
+  return showUser;
+}
+export { hangman };
