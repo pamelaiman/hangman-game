@@ -25,11 +25,15 @@ function Hangman() {
                 alert("You win!");
             }
         } else {
-            const newMisses = misses + 1;
-            setMisses(newMisses);
-            if (newMisses === 10) {
-                setGameOver(true);
-                alert("You lose. The word was:"`${randomWordToGuess}`);
+            if (misses < 10) {
+                const newMisses = misses + 1;
+
+                if (newMisses === 10) {
+                    setGameOver(true);
+                    alert(`You lose. The word was: ${randomWordToGuess}`);
+                } else {
+                    setMisses(newMisses);
+                }
             }
         }
     }
